@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link rel="icon" type="image/png" href="{{ asset('build/images/favicon.png') }}"/>
 		<title>
-			{% block title %}Coach Moi{% endblock %}
+			{% block title %}Welcome{% endblock %}
 		</title>
 
 		{% block stylesheets %}
@@ -17,8 +17,10 @@
 		{% endblock %}
 	</head>
 	<body>
-		{% block navbar %}{% endblock %}
+		<header>
+            {% include "includes/_navbar.html.twig" %}
+        </header>
 		{% block body %}{% endblock %}
-		{% block footer %}{% endblock %}
+		
 	</body>
 </html>
