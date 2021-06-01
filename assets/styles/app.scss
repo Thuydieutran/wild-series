@@ -1,13 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 
+
 $primary: purple;
 $secondary: lightgrey;
 
-
 body {
-    background-color: whitesmoke;
+    background-color: $secondary;
 }
 
 .navbar {
     color: $primary;
+    background-color: $secondary;
 }
