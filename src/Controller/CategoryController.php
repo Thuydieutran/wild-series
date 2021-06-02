@@ -1,70 +1,62 @@
 <?php
 
-// src/Controller/ProgramController.php
-
 namespace App\Controller;
 
-use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
+
 use App\Entity\Category;
 use App\Entity\Program;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+
 
 /**
-
- * @Route("/categories", name="category_")
-
+ *  @Route("/categories", name="category_")
  */
+
 class CategoryController extends AbstractController
 {
+
     /**
-
-     * @Route("/categories/", name="category_index")
-
+     *
+     * @Route("/", name="index")
+     * @return Response 
      */
+
     public function index(): Response
     {
-        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-        return $this->render('category/index.html.twig', [
-        'categories' => $categories
-        ]);
-    }
+        $categories = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findAll();
 
-/**
-
- * @Route("/categories/{categoryName}", name="category_show")
- * @return Response
-*/
-
-public function show(string $categoryName):Response
-
-{
-
-    $category = $this->getDoctrine()
-
-        ->getRepository(Category::class)
-
-        ->findOneBy([
-            'name' => $categoryName
-        ]);
-
-    if(!$category){
-
-        throw $this->createNotFoundException(
-            'Error 404 No category found.'
+        return $this->render(
+            'category/index.html.twig',
+            ['categories' => $categories]
         );
-
     }
 
-    $programs = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findBy(['category' => $category->getId()],['id' => 'DESC'],3);
+    /**
+     * @Route("/{categoryName}", name="show")
+     */
 
-    return $this->render('category/show.html.twig', [
+     public function show(string $categoryName): Response 
+     {
+        $category = $this->getDoctrine()
+        ->getRepository(Category::class)
+        ->findOneBy(['name' => $categoryName]);
 
-        'programs' => $programs,
+        if(!$category) {
+             throw $this->createNotFoundException(
+                'No category with name : '.$categoryName.'was found in category\'s table.'
+            );
+        }
 
-    ]);
-
-    }
+        $programs = $this->getDoctrine()
+        ->getRepository(Program::class)
+        ->findBy([
+                 'category' => $category->getId()],
+                ['id' => 'DESC'],3);
+        return $this->render('category/show.html.twig', ['name' => $categoryName, 'programs' => $programs]);
+     }
 }
