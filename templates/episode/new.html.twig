@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+{% block title %}New Episode{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="my-5">Create new Episode</h1>
+
+    {{ include('episode/_form.html.twig') }}
+
+    <a href="{{ path('episode_index') }}">Back to list</a>
+    </div>
+{% endblock %}
