@@ -10,22 +10,22 @@
 
         <div class="row">
 			<div class="col-4 mt-5">
-				<img class="align-self-start  w-100 mt-5 p-5" src="{{program.poster}}" alt="{{ program.title }} poster">
+				<img class="align-self-start  w-100 mt-5 p-5" src="{{program.poster}}" alt="">
 			</div>
 			<div class="col-8 mt-5">
 
                 <h1 class="mt-0">{{ program.title }}</h1>
 
-                <p>{{ program.summary }}</p>
+                <p class="fst-italic">{{ program.summary }}</p>
 
-                <p>Catégorie : {{ program.category.name }}</p>
+                <p class="fs-5">Catégorie : {{ program.category.name }}</p>
+				
                 {% for season in seasons %}
-						<a href="{{ path("program_season_show", {programId: program.id, seasonId: season.id}) }}">
-							Season
-							<span class="fw-bold">{{ season.number }}</span>
+						
+						<a href="{{ path("program_season_show", {"program_id": program.id, "season_id": season.id}) }}">
+							<span class="fw-bold"> Season {{ season.number }}</span>
 						</a>
-						<span class="fw-bold">Year:</span>
-						{{ season.year }}</p>
+						<p>Year: {{ season.year }}</p>
 
 					<p>
 						<span class="fw-bold">Description:</span>
@@ -36,7 +36,7 @@
 				{% endfor %}
 	        </div>  
          </div>        
-<a href="{{ path('program_index') }}">
+<a class="text-dark fw-bold" href="{{ path('program_index') }}">
 
     Retour à la liste des programmes
 
