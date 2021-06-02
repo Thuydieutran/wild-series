@@ -9,8 +9,8 @@
     <h1 class="my-5">Liste de catégories : </h1>
     <ul>
     {% for category in categories %}
-        <li>{{ loop.index }} / {{ category.name}}
-             <a href="{{ path("category_show", { categoryName: category.name }) }}">Voir les séries</a>
+        <li class="fs-5 fw-bold text-success list-group-item">{{ loop.index }} / {{ category.name}}
+             <a class="text-dark mx-5 fst-italic fw-normal" href="{{ path("category_show", { categoryName: category.name }) }}">  Voir les séries</a>
         </li>
     {% endfor %}
     </ul>
