@@ -5,7 +5,8 @@
 
 <div class="container mt-5">
         <h1 class="mb-5">Add a new Program</h1>
-    {{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
 
     {{ form_widget(form) }}
 
