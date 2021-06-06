@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Actors{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center my-5">Actors :</h1>
+
+    {% for actor in actors %}
+    <p class="my-5">{{ loop.index }} - <a  href = "{{ path('actor_show', {id: actor.id}) }}"> {{ actor.name }}</a></p>
+    {% else %}
+    <p class="fs-5 fst-italic fw-bold">No actor found.</p>
+    {% endfor %}
+</div>
+
+
+{% endblock %}
