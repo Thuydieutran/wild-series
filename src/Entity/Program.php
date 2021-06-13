@@ -59,12 +59,16 @@ class Program
      */
     private $actors;
 
+    /**
+     * @ORM\Column(type="string", length=300)
+     */
+    private $slug;
+
     public function __construct()
     {
         $this->seasons = new ArrayCollection();
         $this->actors = new ArrayCollection();
     }
-
 
     public function getId(): ?int
     {
@@ -97,6 +101,7 @@ class Program
         $this->poster = $poster;
         return $this;
     }
+
     public function getCategory(): ?Category
     {
         return $this->category;
@@ -161,6 +166,18 @@ class Program
         if ($this->actors->removeElement($actor)) {
             $actor->removeProgram($this);
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

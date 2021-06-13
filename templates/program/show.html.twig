@@ -38,8 +38,8 @@
 				
                 {% for season in seasons %}
 						
-						<a href="{{ path("program_season_show", {"program_id": program.id, "season_id": season.id}) }}">
-							<span class="fw-bold"> Season {{ season.number }}</span>
+						<a href="{{ path("program_season_show", {"program_slug": program.slug, "season_id": season.id}) }}">
+							<span class="fw-bold text-success"> Season {{ season.number }}</span>
 						</a>
 						<p>Année: {{ season.year }}</p>
 
@@ -51,7 +51,7 @@
 				{% endfor %}
 	        </div>  
          </div>        
-<a class="text-dark fw-bold" href="{{ path('program_index') }}">
+<a class="text-success fw-bold" href="{{ path('program_index') }}">
 
     Retour à la liste des programmes
 

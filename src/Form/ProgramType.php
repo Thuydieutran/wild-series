@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ProgramType extends AbstractType
 {
@@ -24,7 +25,7 @@ class ProgramType extends AbstractType
 
                 'class' => Actor::class,
             
-                'choice_label' => 'selector',
+                'choice_label' => 'name',
             
                 'multiple' => true,
             

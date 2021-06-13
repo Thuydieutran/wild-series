@@ -15,7 +15,7 @@
          <h2 class="text-success mt-3">{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
          <p>{{ program.summary }}</p>
          {# Lien vers la fiche de la série : #}
-        <a class="text-dark fw-bold" href="{{ path("program_show", { "program_id": program.id }) }}">Voir la fiche</a>
+        <a class="text-dark fw-bold" href="{{ path("program_show", { "program_slug": program.slug }) }}">Voir la fiche</a>
       </div>
     {% endfor %}
 

@@ -31,13 +31,13 @@
 
 				{% for episode in episodes %}
 
-					<a class="my-3 d-block" href="{{ path("program_episode_show", {"program_id": program.id, "season_id": season.id, "episode_id": episode.id}) }}">
-						<p><span class="fw-bold">Episode {{episode.number}}</span> : {{ episode.title }}</p>	
+					<a class="my-3 d-block " href="{{ path("program_episode_show", {"program_slug": program.slug, "season_id": season.id, "episode_slug": episode.slug}) }}">
+						<p><span class="fw-bold text-success">Episode {{episode.number}}</span> : {{ episode.title }}</p>	
 					</a>
 			{% endfor %}
 
 		</div>
-		<a class="d-block m-auto mx-5 my-5" href="{{ path('program_index') }}">
+		<a class="d-block m-auto mx-5 my-5 text-success" href="{{ path('program_index') }}">
 		Retour à la liste des programmes
 	</a>
 	</div>

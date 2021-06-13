@@ -11,7 +11,7 @@
     <h2>Bien connu dans les séries :</h2>
 
         {% for program in actor.programs %}
-            <div class="my-3 fs-5 text-success"> <a class="text-success fw-bold" href="{{ path('program_show', {program_id: program.id}) }}">{{ program.title }}</a></div>  
+            <div class="my-3 fs-5 text-success"> <a class="text-success fw-bold" href="{{ path('program_show', {program_slug: program.slug}) }}">{{ program.title }}</a></div>  
         {% endfor %}
 
 <a class="text-dark fw-bold" href="{{ path('actor_index') }}">
