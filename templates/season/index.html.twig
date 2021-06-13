@@ -9,7 +9,7 @@
        <table class="table table-bordered border-success table-hover">
          <thead>
             <tr>
-                <th>Id</th>
+                <th>Program title</th>
                 <th>Number</th>
                 <th>Year</th>
                 <th>Description</th>
@@ -19,7 +19,7 @@
         <tbody>
         {% for season in seasons %}
             <tr>
-                <td>{{ season.id }}</td>
+                <td>{{ program.title }}</td>
                 <td>{{ season.number }}</td>
                 <td>{{ season.year }}</td>
                 <td>{{ season.description }}</td>
