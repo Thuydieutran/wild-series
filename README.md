@@ -25,3 +25,6 @@ https://www.youtube.com/watch?v=t1MI18JGmQA
 
 ** Lien video Quest 17:
 https://www.youtube.com/watch?v=uo7Fpsn4Jio
+
+** Lien video Quest 18:
+https://www.youtube.com/watch?v=rn6B9UiD4eI
