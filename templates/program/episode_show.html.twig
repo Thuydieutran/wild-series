@@ -1,5 +1,7 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
+
 {% block title %}Wild Séries | 
 		Serie
 
@@ -29,16 +31,36 @@
 					<span class="fw-bold">Description:
 					</span>
 					{{ season.description }}</p>
-
-
 				<p class="mb-5">
 					<span class="fw-bold">Synopsis:</span>
 					{{episode.synopsis}}</p>
 			</div>
 
-		<a class="w-25 m-auto text-success"href="{{ path('program_index') }}">
-			Retour à la liste des programmes
-		</a>
+			<a class="w-25 text-success"href="{{ path('program_index') }}">
+			Back to the program list
+			</a>
+		</div>	
+		<div class="row mt-5">
+			<div class="col-md-6">
+				{% if app.user %}
+				{{ form_start(form) }}
+				
+					{{ form_widget(form) }}
+						
+					<input class="btn bg-success text-light mt-3" type='submit' value='Add comment'>
+				{{ form_end(form) }}
+				{% endif %}
+			</div>
+			<div class="col-md-6">
+				{% for comment in episode.comments | reverse %}
+				
+					<p class="my-3"><span class="fw-bold">Comment No {{ comment.id }}</span> posted by <span class="fst-italic text-success">{{ comment.user.username }}</span> </p>
+					<ul>	
+						<li>Content: {{ comment.comment }} </li>
+						<li>Rate : {{ comment.rate }} </li>
+					</ul>			
+				{% endfor %}
+			</div>	
 		</div>
 	</div>
 

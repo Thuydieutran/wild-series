@@ -29,5 +29,9 @@ https://www.youtube.com/watch?v=uo7Fpsn4Jio
 ** Lien video Quest 18:
 https://www.youtube.com/watch?v=rn6B9UiD4eI
 
-** Lien video Quest 19:
-https://www.youtube.com/watch?v=JkFXFR7vMU8
+
+** Lien video Quest 19: 
+https://www.youtube.com/watch?v=up-pr0HWx5U
+
+** Lien video Quest 20: 
+https://www.youtube.com/watch?v=OQZkt9tO5Zo

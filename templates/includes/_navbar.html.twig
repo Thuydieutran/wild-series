@@ -7,8 +7,19 @@
   <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
     <div class="navbar-nav px-3">
       <a class="nav-item nav-link active fs-5 text-success mx-5" href="/">Home</a>
-      <a class="nav-item nav-link fs-5 text-success" href="/categories"> Categories</a>
-      <a class="nav-item nav-link fs-5 text-success" href="/programs"> Programs</a>
+      <a class="nav-item nav-link fs-5 text-success" href="{{ path('category_index') }}"> Categories</a>
+      <a class="nav-item nav-link fs-5 text-success" href="{{ path('program_index') }}"> Programs</a>
     </div>
   </div>
+  {% if app.user %}
+
+    {{ app.user.email }}
+
+    <a class="nav-item nav-link fs-5 text-success" href="{{ path('app_logout') }}"> Se déconnecter</a>
+
+{% else %}
+
+    <a class="nav-item nav-link fs-5 text-success" href="{{ path('app_login') }}"> Se connecter</a>
+
+{% endif %}
 </nav>
